@@ -1,4 +1,4 @@
-# asacmug-yahoo
+# asacmug
 ASACMUG on Yahoo! Groups 2003-2008
 
 This is an archive of the activity of the ASACMUG 
@@ -10,3 +10,6 @@ are not functional since the HTML files were copied
 without modification.
 
 [Message 1](message_1.html)
+
+Future links will point to the newsletter and meeting
+archives.
