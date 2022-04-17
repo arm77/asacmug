@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# asacmug-yahoo
+ASACMUG on Yahoo! Groups 2003-2008
 
-You can use the [editor on GitHub](https://github.com/arm77/asacmug-yahoo/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This is an archive of the activity of the ASACMUG 
+User Group when it was hosted on Yahoo! from 2003 to 2008.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The Previous/Next links have been changed to allow
+easy navigation between messages but the other links
+are not functional since the HTML files were copied
+without modification.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/arm77/asacmug-yahoo/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Message 1](message_1.html)
