@@ -2,7 +2,7 @@
 ASACMUG Newsletters
 
 This is an archive of the ASACMUG Newsletter published
-from 1989 to 19XX
+from 1989 to 1999
 
 * <B>1989</B>
 * January 1989 [Page 1](1989_01_1.gif) [Page 2](1989_01_2.gif)
