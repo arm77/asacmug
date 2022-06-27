@@ -3,7 +3,6 @@ ASACMUG Newsletters
 
 This is an archive of the ASACMUG Newsletter published
 from 1989 to 19XX
-1. [Yahoo Groups Archives](yahoo-groups/index.md)
 
 * January 1989 [Page 1](1989_01_1.gif) [Page 2](1989_01_2.gif)
 * February 1989 [Page 1](1989_02_1.gif) [Page 2](1989_02_2.gif) [Page 3](1989_02_3.gif)
