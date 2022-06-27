@@ -1,0 +1,1206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type"
+        content="text/html; charset=utf-8" />
+  <meta name="robots"
+        content="all" />
+  <title>1994Q4</title>
+</head>
+
+<body>
+  <div id="container">
+    <!-- Start container -->
+
+    <div id="pageHeader">
+      <!-- Start page header -->
+
+      <h1>ASACMUG Newsletter</h1>
+
+      <h2>1994Q4</h2>
+    </div><!-- End page header -->
+
+    <div id="contentContainer">
+      <!-- Start main content wrapper -->
+
+      <div id="content">
+        <!-- Start content -->
+
+        <p><img src="newsletter_assets/header1.gif"
+             width="469"
+             height="77"
+             align="bottom"
+             naturalsizeflag="3" /></p>
+
+        <p align="center"><b><font size="+3">Fourth Quarter,
+        1994</font></b></p>
+
+        <p align="center"><b>·· NOTICE - PLEASE READ ··</b></p>
+
+        <p>This newsletter is divided into chapters, with each
+        chapter divided into sections. To scroll up or down
+        sections, use the scroll bar to the right or use the
+        up/down arrow keys. To move between chapters, use the
+        scroll bar at the bottom, the left/right arrow keys, the
+        Contents menu above, or click on the hand at the bottom of
+        each chapter. If you have a small screen, click on the zoom
+        box on the upper right. Clicking on the close box on the
+        upper left will quit this program.</p>
+
+        <p>Welcome to the second electronic version of the ASACMUG
+        newsletter. This issue features an article on using
+        FileMaker Pro with Applescript, reviews of LeeMail (a
+        mailing utility) and VirtualDisk (a disk cataloging
+        utility), plus a detailed look at System 7.5. We also have
+        the President's Column and Mac-related news articles,
+        including an offer to join the eWorld online service.</p>
+
+        <p>Enjoy and have fun! Remember, we are always looking for
+        ways to make this newsletter one you want to read. Feedback
+        and comments are greatly appreciated. [See last page for
+        contact information.]</p>
+
+        <p>Alex Morando
+        <br />
+        Newsletter Editor&nbsp;</p>
+        <hr />
+
+        <p><b>Table of Contents</b></p>
+
+        <ul>
+          <li><a href="#anchor779832">President's Column</a></li>
+
+          <li><a href="#anchor780275">Scripting FileMaker
+          Pro</a></li>
+
+          <li><a href="#anchor781178">LeeMail</a></li>
+
+          <li><a href="#anchor789996">VirtualDisk</a></li>
+
+          <li><a href="#anchor790627">System 7.5 Overview</a></li>
+
+          <li><a href="#anchor791440">Macintosh News</a></li>
+
+          <li><a href="#anchor797272">November User Group
+          Specials</a></li>
+        </ul>
+        <hr />
+
+        <p><a name="anchor779832"
+           id="anchor779832"></a><b>President's Column
+        <br />
+        Mike Quan
+        <br /></b>quanmike@aol.com</p>
+
+        <p>[No president's column this month, sorry. -Ed.]</p>
+        <hr />
+
+        <p><img src="1994Q4_assets/image4.gif"
+             width="32"
+             height="32"
+             align="right"
+             naturalsizeflag="3" /><a name="anchor780275"
+           id="anchor780275"></a><b>Scripting FileMaker Pro
+        <br />
+        Alex Morando, AES Engineering
+        <br /></b></p>
+
+        <p>18 months ago, Claris released a version of their
+        FileMaker Pro database with scripting capabilities. It is a
+        subset of <b>AppleScript</b>, an system extension that
+        allows multiple applications to work together and allow the
+        user to integrate them for his or her specific needs. In
+        many respects, it is a batch language similar to that used
+        on PCs, but is also an entire programming language with a
+        great deal of power.</p>
+
+        <p><b>Software Development Folders</b></p>
+
+        <p>AppleScript was used in AES Space Systems Engineering to
+        create a prototype Software Development Folder (SDF). It
+        offered features and capabilities not possible with the
+        current paper-based SDF.</p>
+
+        <p>An SDF tracks the development of a software engineering
+        program. It tracks requirements, project milestones, actual
+        program files, diagrams, and test/qualification results. It
+        is used to verify that the software is developed correctly
+        and within customer specifications.</p>
+
+        <p>Before this project, an SDF was just a manila folder
+        with separate sections, each section being handwritten or
+        printed separately. The basic problem is that the
+        relationship between what is in the SDF and what software
+        is actually being written is out-of-date at best, uncertain
+        at worst.</p>
+
+        <p>In designing the prototype, FileMaker Pro was selected
+        to contain the various sections in the SDF. A database
+        application made sense since each SDF section contained
+        redundant information, such as SDF name, dates, assigned
+        serial number, and schedule milestones. Different layouts
+        were used to recreate each page so that it looked like the
+        original paper-only SDF. Fields were added to reference the
+        various documents, customer changes, technical milestones,
+        comments, and other required SDF information. One layout
+        was used to create a central reference to the SDF, similar
+        to a Table of Contents.</p>
+
+        <p><b>Enter AppleScript</b></p>
+
+        <p>This is where AppleScript comes into play. Ada source
+        code (text files) and data flow diagrams (Postscript files)
+        had to be correlated. These files could have been imported
+        into FileMaker Pro as text and picture fields, but that
+        would have dramatically increased database size and would
+        result in having multiple copies of the source code and
+        diagrams. Thus, it was decided to keep the source code as
+        separate text files and the diagrams in a separate
+        FileMaker database. So how can a person looking at the
+        original SDF be able to access the source code text and
+        diagrams (in another file)?</p>
+
+        <p>The diagrams was easy - use a script. It would take the
+        unit identifier for the software, copy it, open the diagram
+        database, and do a search based on that unit identifier.
+        The diagram would then pop up soon after the user clicks on
+        the "Block Diagram" button (Figure 1). The corresponding
+        script is shown in Figure 2:</p>
+
+        <p align="center"><img src="1994Q4_assets/image5.gif"
+             width="100%"
+             height="367"
+             align="bottom"
+             naturalsizeflag="2" />
+        <br />
+        <b>Figure 1 - SDF Interface</b></p>
+
+        <p align="center"></p>
+
+        <p align="center"><b>Script 1 -- located in SDF
+        database</b></p>
+
+        <blockquote>
+          <p><tt>Go to Field ["Unit Identifier"]
+          <br />
+          Copy [Select]
+          <br />
+          Perform Script [Sub-scripts,External,:"EPSF
+          Graphics",Script 2]
+          <br />
+          End</tt></p>
+        </blockquote>
+
+        <p align="center"><b>Script 2 -- located in EPSF Graphics
+        database</b></p>
+
+        <blockquote>
+          <p><tt>Find All
+          <br />
+          Enter Find Mode [Restore]
+          <br />
+          Go to Field ["Unit Identifier"]
+          <br />
+          Paste [Select]
+          <br />
+          Perform Find[]
+          <br />
+          End</tt></p>
+        </blockquote>
+
+        <p align="center"><b>Figure 2 - FileMaker Pro Script
+        Examples</b></p>
+
+        <p align="center"></p>
+
+        <p>To open source code files was similar: take the current
+        serial number for the software, and instruct the Finder to
+        open a file based on the serial number. The AppleScript
+        that does this is listed in Figure 3. It's very easy to
+        understand, since AppleScript is a loosely-typed language -
+        there are multiple ways to accomplish the same thing and
+        the syntax is English-like.</p>
+
+        <p>Instead of telling what program to open, the Finder
+        simply tells the file to open itself. Thus, it doesn't
+        matter what program created the file; the right one will
+        always be opened. However, since this was implemented on
+        both Macs and PCs, the default file extension is *.ASC to
+        allow automatic opening by Windows programs.</p>
+
+        <p align="center">&nbsp;<img src="1994Q4_assets/image6.gif"
+             width="474"
+             height="326"
+             align="bottom"
+             naturalsizeflag="3" /></p>
+
+        <p align="center"><b>Figure 3 - AppleScript Example</b></p>
+
+        <p><b>The Bottom Line</b></p>
+
+        <p>This FileMaker database prototype took four days to
+        conceptualize, implement, and debug. Both the Mac and
+        Windows version of the SDF were implemented simultaneously.
+        It is very robust and was well received by those in charge
+        of SDF maintenance. In addition, with the security features
+        built into FileMaker, there is now a closer relationship
+        between what we say and what we do, in the spirit of
+        IPDS</p>
+        <hr />
+
+        <p><a name="anchor781178"
+           id="anchor781178"></a><b>LeeMail
+        <br />
+        Ron Keating, AES Engineering</b></p>
+
+        <p><b>Introduction to Email on the Internet</b></p>
+
+        <p>Everybody wants to use the Internet these days and the
+        one thing that everybody can do on the Internet is send
+        email. Electronic Mail is the first of 4 rivers of
+        information on the Internet (see page 18 of Adam Engst's
+        book <b>Internet Starter Kit</b> for the other three). For
+        some people, the amount of time the Net requires sours
+        their experience with it. The one thing that keeps most
+        users checking the Net is electronic mail.</p>
+
+        <p>There are a number of <b>ways to access the
+        Internet</b>, including Email Gateways (like Compuserve and
+        America On Line provide), Command Line Access (from a Unix
+        machine), UUCP access, and as Adam Engst calls it "the
+        cream of the crop" MacTCP access. It is possible to use the
+        command-line access from your favorite Unix workstation,
+        using the "mail" command. But, if you don't like typing
+        long strings of commands or remembering cryptic Unix
+        abbreviations, there is MacTCP access with the Macintosh
+        graphical interface.</p>
+
+        <p>If you have <b>MacTCP</b> correctly installed and are
+        connected via a network or dial up phone line with a modem
+        to an Internet provider, you can use one of the cool MacTCP
+        Email programs like Eudora, LeeMail, Iride, POPmail,
+        TechMail, BlitzMail and probably countless others.</p>
+
+        <p>Many Macs at the company already have direct access to
+        the Internet. If you can access a networked Unix
+        workstation via MacTCP, your Mac is probably a node on the
+        Internet. For example, my Internet address is
+        keating@mac7.tor.allied.com. The Macintosh sitting on my
+        office desktop is mac7. A good way to prove this is to try
+        out an Email program, like LeeMail. One of the good things
+        about an Email program is it doesn't appear to be affected
+        by the introduction of the company's <b>Interlock
+        Firewall</b>, that was activated on June 27.</p>
+
+        <p>To use a dial up connection with a modem, in addition to
+        MacTCP, you also have to have a SLIP (Serial Line Internet
+        Protocol) or the newer PPP (Point to Point Protocol)
+        account with an Internet provider if you want to run MacTCP
+        aware applications with a Macintosh interface.</p>
+
+        <p>It seems that the favorite TCP/IP aware Email software
+        is Eudora, written by Steve Dorner. However, Eudora doesn't
+        work on the company network, because it requires POP (Post
+        Office Protocol) mail server. All we have is SMTP (Simple
+        Mail Transfer Protocol) on our network. Enter
+        <b>LeeMail</b>, which is an SMTP mailer.</p>
+
+        <p>I have been using LeeMail for three months now, and it
+        is another one of those programs that does one thing and
+        does it very well. It uses only 256k of RAM and can be left
+        running all of the time. I put it in my startup folder.
+        LeeMail has audio notification of new mail; when mail
+        arrives, it has it's own sound resource that is like a
+        spoon striking a half full wine glass twice. I liked the
+        sound so much, I used ResEdit to create a separate sound
+        from it, which I added to my system file.</p>
+
+        <p><b>How to Get LeeMail</b></p>
+
+        <p><b>LeeMail is a shareware program</b>; if you like it,
+        send a check for $25.00 to Lee Fyock, who wrote the
+        program. The program can be found on the ASACMUG BBS on the
+        Engineering KeyServer in the Software Library:Network
+        folder. LeeMail comes with 17 pages of documentation
+        written in Microsoft Word.</p>
+
+        <p><b>How to Use LeeMail</b></p>
+
+        <p>In the beginning, <b>to use LeeMail</b>, you have to go
+        to the Edit menu and select Settings, which opens <b>the
+        Preferences window</b>. Select the Mail Setup radio button
+        and enter the following information. I will give the
+        entries for my setup as examples.</p>
+
+        <dl>
+          <dt><tt>Your Mac's domain name
+          mac7.tor.allied.com</tt></dt>
+
+          <dt><tt>Your user ID keating</tt></dt>
+
+          <dt><tt>Your full name Ron Keating</tt></dt>
+
+          <dt><tt>Your address for replies
+          keating@mac7.tor.allied.com</tt></dt>
+        </dl>
+
+        <p>Your user ID can be just about any alphanumeric string,
+        and your full name is your "human" name, so that recipients
+        will know who sent them mail. Next, select Outgoing Mail
+        Options in Preferences. My entries are as follows:</p>
+
+        <dl>
+          <dt><tt>X Use mail router</tt></dt>
+
+          <dt><tt>Router domain name ase.tor.allied.com</tt></dt>
+
+          <dt><tt>X Binhex TEXT enclosures</tt></dt>
+
+          <dt><tt>Limit TCP packet size</tt></dt>
+
+          <dt><tt>X CC to self</tt></dt>
+
+          <dt><tt>Use [80] columns in window</tt></dt>
+
+          <dt><tt>X Add signature</tt></dt>
+        </dl>
+
+        <p>The signature button in Outgoing Mail Options lets you
+        set the text to be appended to your outgoing mail. For
+        example, I use sometimes use the following signature,
+        although I often change it:</p>
+
+        <p><!--NOEDIT--></p>
+        <pre>
+*******************************************************************************
+Ron Keating                   |  People who think they know everything
+keating@mac7.tor.allied.com   |  make life difficult 
+(310) 512-3575                |  for those of us 
+AlliedSignal ECS,AES,ASA      |  who really do.
+*******************************************************************************
+</pre><!--/NOEDIT-->
+
+        <p>There are still more windows in Preferences for Incoming
+        Mail Options, General Options, Notify Options, and POP
+        options; these should be self explanatory.</p>
+
+        <p>One other setting is very important if you want to send
+        mail: the <b>Domain Name Server</b> information in the
+        MacTCP Administrator dialog box must be correctly entered.
+        To check if this information has been entered, open the
+        MacTCP control panel and click on More to see the
+        Administrator dialog box. To set the information in the
+        Administrator dialog box, you need "full configuration
+        authority." You can get this authority if you have AdminTCP
+        in your Control Panels in the System Folder. Open the Admin
+        TCP control panel, select more, and remove the X in the
+        Protected box. Then set the Domain Name Server information.
+        My setting is as follows:</p>
+
+        <dl>
+          <dt><tt>Domain IP Address</tt></dt>
+
+          <dt><tt>tor.allied.com 131.127.119.10</tt></dt>
+        </dl>
+
+        <p>If you don't have Admin TCP, or you don't know your
+        Domain Name Server, you will have to see your network
+        system administrator. It's a good idea to make a copy of
+        the MacTCP files, before making any changes. There are four
+        files that are important: MacTCP Prep in the Preferences
+        folder, MacTCP and AdminTCP in the Control Panels folder,
+        and MacTCP DNR in the System Folder. You can copy the hosts
+        file in the System Folder too. All of the settings are
+        saved in the MacTCP Prep file, so this is the most
+        important one to save.</p>
+
+        <p><b>LeeMail has a lot of nice features</b>. LeeMail
+        supports aliases; selecting Aliases from the Edit menu
+        gives the Aliases window. This lets you associate a simple
+        name with the long string of text that comprises each
+        Internet address, so that you don't have to type the
+        address every time you send mail. When you are done with
+        LeeMail, it automatically hides its windows when you click
+        on any other part of the desktop. LeeMail can be set up to
+        save all of your incoming messages and all of your outgoing
+        messages to files that are easily accessed from the
+        program. It also supports auto-quote text when replying to
+        messages.</p>
+
+        <p><b>If LeeMail isn't running, when Email arrives</b>, the
+        local SMTP server saves the Email file. Then, when you
+        launch LeeMail or boot up your Mac, the server sends the
+        Email file to LeeMail, which then stores it on the Mac's
+        hard drive in the LeeMail Files folder.</p>
+
+        <p>In addition to sending text messages, LeeMail can be
+        used to send and receive <b>binary files</b>. Binary files
+        can be sent as enclosures or simply copied into the text
+        message. LeeMail enclosures are sent in <b>BinHex</b>
+        format, which is a 7 bit ASCII representation of an 8 bit
+        binary file and is widely used on the Internet by the Mac
+        world. You can BinHex a file with AutoBinHex and you can
+        deBinHex a file with StuffIt Expander, both of which are
+        freeware and available on the Engineering KeyServer in
+        Torrance. You can use BBEdit to open a BinHex file and
+        paste it into email text. You can extract a BinHexed file
+        from email text, by recognizing that it starts with a blank
+        line, followed by a message "(This file must be converted
+        with BinHex 4.0)" and another blank line. The ASCII text
+        between the two colons is the BinHexed file. Copy this and
+        paste it into a new BBEdit file. To convert to the original
+        binary file, use StuffIt Expander to extract the original
+        from the saved BBEdit file. Sometimes, a long file greater
+        than 20k may be broken up into parts at the receiving end.
+        In this case, to restore the original file, copy each of
+        the parts into BBEdit in turn to reassemble the original
+        BinHexed file.</p>
+        <hr />
+
+        <p><a name="anchor789996"
+           id="anchor789996"></a><b>VIRTUALDISK by Continuum
+           Software
+        <br />
+        Roger Wright, AES Engineering</b></p>
+
+        <p><b>What Is It?</b></p>
+
+        <p>VirtualDisk is a small Control Panel system extension to
+        help you produce and update an on-line catalog of all your
+        floppy disks and other removable media that you use with
+        your Macintosh.</p>
+
+        <p><b>The Problem:</b></p>
+
+        <p>After a few years of using a Macintosh -- both at work
+        and at home -- I've accumulated well over a hundred floppy
+        disks, which I have used for a variety of purposes. Some of
+        these disks contain backup material of many types; some
+        contain files of shareware, freeware, bulletin board
+        discussions, etc.; and some of them have been used to
+        transport data between my work and home computers. The
+        problem: how do I find a particular item that I know I put
+        on a floppy x weeks ago, but now can't remember which
+        one?</p>
+
+        <p>[At this point, I should mention that I'm not talking
+        about backup disks for various applications, such as
+        Microsoft Word, MacDraw Pro, etc. These are neatly labeled
+        and placed in special file boxes, where they are easily
+        retrieved. I'm not interested in the contents of these
+        disks, just what they are (e.g., <i>Install 1</i>).]</p>
+
+        <p>Up to now, I've found no satisfactory means of
+        cataloging my many floppies. At one point, I started a
+        project to produce tables of contents of all my floppies.
+        This involved inserting each disk into the Mac, choosing
+        <b>View by Name</b> and opening all folders on the disk,
+        and then getting a printout using the Finder's <b>Print
+        Window...</b> command. The idea was to have a loose-leaf
+        binder to contain all these tables of contents. I managed
+        to do only 5 to 6 disks before the tedium of the process
+        killed it.</p>
+
+        <p>Besides, I realized that to search for a particular item
+        would still require a bit of effort on my part, even if I
+        had carefully categorized the table of contents in the
+        notebook. And suppose I was at work and the notebook was at
+        home.</p>
+
+        <p><b>The Solution: Virtual Disk</b></p>
+
+        <p>VirtualDisk is a utility by Continuum Software of
+        Portland, Oregon which does a super job of producing, and
+        keeping on-line, the contents of all removable media which
+        pass through your Macintosh. It does this in a completely
+        painless, and nearly automatic manner. (For purposes of
+        discussion, we'll use the term floppy, but the operation is
+        the same for all removable media; Syquest or Bernoulli
+        cartridges, etc.).</p>
+
+        <p><b>How the Cataloging Works</b></p>
+
+        <p>When you first load VirtualDisk, it creates a 1 MB file
+        called VirtualDisk Catalog in the Preferences File in your
+        System Folder. This file is large enough to catalog about
+        8000 files; it will expand automatically as more and more
+        floppies (or other removable media) are included.</p>
+
+        <p>The way VirtualDisk works is very simple: When you eject
+        a floppy, VirtualDisk will save the disk's directory in its
+        Catalog. In practice, I've found you want to set the "Ask
+        First" preference as opposed to the "Always Catalog". When
+        you eject a floppy that has not been previously cataloged,
+        VirtualDisk, under "Ask First", will present you with a
+        dialog asking if you want to catalog this disk. There are
+        many times you don't want that particular disk cataloged;
+        simply click on "Don't Catalog", or press the <b>esc</b>
+        key, and the disk ejects. If you want to catalog it, click
+        on "Catalog" or press the <b>Return</b> key, and
+        VirtualDisk will assign it a serial number, and in a few
+        seconds will store the disk's directory.</p>
+
+        <p>If the disk you are ejecting has already been cataloged,
+        VirtualDisk will automatically scan its directory for any
+        changes, and will appropriately update its Catalog file,
+        and then eject the disk.</p>
+
+        <p><b>How to Interrogate the VirtualDisk Catalog</b></p>
+
+        <p>VirtualDisk automatically mounts a "volume" on your
+        desktop -- its icon suggests a 22nd century power plant.
+        When you double click on this icon, a window opens which
+        contains the icons and names of all of the floppies which
+        have been cataloged. This window can be viewed just like
+        any other Finder window -- usually you'll want to <b>View
+        by Name</b>. By double clicking a floppy icon, a new window
+        will come up showing the contents of the floppy in the same
+        style as if you had inserted the floppy and double clicked
+        on it. (If you have turned on all of the VirtualDisk
+        storage options, the window will be exactly the same as
+        that of the floppy.)</p>
+
+        <p>You can wander through the various floppy directories as
+        you choose, using the normal Finder procedures. More
+        important, however, is the ability of any <i>Find</i>
+        utility (the Finder's own <b>Find...</b>, Norton Utilities
+        <b>Fast Find</b>, etc.) to quickly scan the floppy
+        directories and present you with its search list. Using it
+        in this manner, you can quickly find out where you have
+        stored copies of a special file or utility, and their
+        creation dates, version numbers, etc. For example, I
+        recently found several copies of PopChar on various disks,
+        all of which were older than the latest version on the
+        bulletin boards.</p>
+
+        <p>If you double click on a particular file or application
+        in one of the VirtualDisk windows, it will prompt you to
+        insert the appropriate floppy.</p>
+
+        <p><b>Miscellaneous Information</b></p>
+
+        <p>Cataloging Non-Removable Media</p>
+
+        <p>The manual says that you can force VirtualDisk to
+        catalog any SCSI volume or Network volume by holding down
+        the <b>Option</b> key while dragging the volume to the
+        trash.</p>
+
+        <p>Reducing Storage Used by the VirtualDisk Catalog</p>
+
+        <p>There are a number of options which can be selected
+        which will reduce the size of the VirtualDisk Catalog -- or
+        allow more items to be cataloged in the original 1-MB
+        catalog. These include storing only black-and-white icons
+        instead of color ones, and limiting the types of files to
+        be cataloged. There are certain exclusions to the catalog
+        process which can be set up explicitly: for example, never
+        to catalog a name like "TeachText".</p>
+
+        <p>Use on Two Macintoshes</p>
+
+        <p>The license agreement specifically limits the use of the
+        product to one Macintosh. This means if you have a home
+        computer and one at work, or a base Mac and a PowerBook,
+        you cannot use VirtualDisk on both computers. The best
+        tactic here would be to install it on the computer at the
+        location where you keep most of your removable media. To
+        keep the VirtualDisk Catalog up to date, you would
+        transport updated floppies to the machine upon which
+        VirtualDisk is loaded, and do the cataloging there.</p>
+
+        <p>Other Utilities Included: DiskDup+ and EasyLabels</p>
+
+        <p>Two other products are shipped with VirtualDisk. One
+        product, DiskDup+ makes sector-by-sector copies of disks.
+        Like Apple's Disk Copy 4.2, it can also be used to store
+        disk images on a hard drive.</p>
+
+        <p>Easy Labels is a disk labeling routine which can
+        automatically produce a variety of diskette labels which
+        include the disk name, its contents and the serial number
+        which VirtualDisk has assigned to it. If you use the Avery
+        5274 diskette label, the disk title and serial number will
+        appear on the edge of the disk.</p>
+
+        <p><b>Overall Opinion</b></p>
+
+        <p>I highly recommend VirtualDisk to all Mac users. It has
+        worked smoothly, quickly, and without any errors in the
+        month that I have had it. The program greatly simplifies my
+        handling of floppies, and I'm sure it would be appropriate
+        for persons who have Syquest or Bernoulli cartridges.</p>
+
+        <p>The Reference Manual is quite adequate, but it is
+        published in a small 4.5 x 4.5 inch format. I like manuals
+        to be larger so they are easier to put on a bookshelf, or
+        include in a loose-leaf binder.</p>
+
+        <p>The restriction of use to only one Macintosh I feel is a
+        real limitation and should be liberalized by Continuum
+        Software.</p>
+
+        <p><b>Ordering Information</b></p>
+
+        <p>VirtualDisk is produced by</p>
+
+        <blockquote>
+          <blockquote>
+            <p>Continuum Software Inc.
+            <br />
+            1075 NW Murray Rd., Suite 307
+            <br />
+            Portland, OR 97229-5501
+            <br />
+            (800) 603-7446</p>
+          </blockquote>
+        </blockquote>
+
+        <p>The list price is $79.00, but Continuum will sell it
+        direct for $49 plus $4.50 shipping and handling. For user
+        groups (ASACMUG qualifies), Continuum offers the product
+        for $39 plus S&amp;H.</p>
+        <hr />
+        <a name="anchor790627"
+             id="anchor790627"></a><b><font size="+2">System
+             7.5</font>
+        <br />
+        Alex Morando, AES Engineering</b>
+
+        <p><b>System 7.5</b> was released by Apple Computer last
+        September. Althought the suggested retail price is $99,
+        there are many ways to get it cheaper - buy a Mac after
+        August, 1994, upgrade an existing copy of System 7, or take
+        advantage of the User Group Special offer for $49.</p>
+
+        <p>I have been running 7.5 for the past three weeks on my
+        PowerMac 6100. Overall, it has been more stable and faster
+        than the previous version, but only if certain features are
+        turned off. I found this disturbing since there are
+        non-Apple utilities out there that can do the same job and
+        yet keep your system stable and running at top speed.</p>
+
+        <p>System 7.5 can be purchsed in floppy or CD-ROM versions.
+        I strongly recommend the CD-ROM version, as it contains
+        more extra software (a cool QuickTime movie and demo
+        software). It might be a good reason to go and buy a CD-ROM
+        drive now, since prices have fallen below $200 for the
+        older models. You can also make backup disks with either
+        version; this is useful when trying to install on a Mac
+        wihtout a CD-ROM drive.</p>
+
+        <p>There are three main installations of 7.5 - the <b>basic
+        software</b> itself, <b>QuickDraw GX</b>, and
+        <b>PowerTalk</b>. I have only installed the basic software
+        and have no experience with either of the last two features
+        except from what other people have told me. The memory
+        requirements are as shown below. In reality, you probably
+        need 8 megs of RAM for the basic system in order to run
+        multiple applications, especially Microsoft Office.</p>
+
+        <table width="100%"
+               border="1"
+               cellspacing="2"
+               cellpadding="0">
+          <tr>
+            <td width="25%">&nbsp;</td>
+
+            <td width="25%">&nbsp;Basic System 7.5</td>
+
+            <td width="25%">&nbsp;+ QuickDraw GX</td>
+
+            <td width="25%">&nbsp;+ PowerTalk</td>
+          </tr>
+
+          <tr>
+            <td width="25%">&nbsp;680X0 Mac</td>
+
+            <td width="25%"
+                align="center">&nbsp;4 Mb</td>
+
+            <td width="25%"
+                align="center">&nbsp;8 Mb</td>
+
+            <td width="25%"
+                align="center">&nbsp;8 Mb (12 Mb with QDGX)</td>
+          </tr>
+
+          <tr>
+            <td width="25%">&nbsp;Power Macintosh</td>
+
+            <td width="25%"
+                align="center">&nbsp;8 Mb</td>
+
+            <td width="25%"
+                align="center">&nbsp;16 Mb</td>
+
+            <td width="25%"
+                align="center">&nbsp;16 Mb</td>
+          </tr>
+        </table>
+
+        <p>One interesting feature of 7.5 is the new <b>Memory
+        Manager</b> -- applications use less memory if virtual
+        memory or RAMDoubler is installed. This is due to the use
+        of shared libraries which reduce memory requirements since
+        programs can now share common operating system code instead
+        of duplicating them.</p>
+
+        <p>The following additions are part of System 7.5. The
+        sections on QuickDraw GX and PowerTalk was obtained from
+        other people who have more memory and who need to use the
+        additional software.</p>
+
+        <p><b>MacTCP/OpenTransport</b></p>
+
+        <p>MacTCP allows Macs to communicate over a network using
+        the TCP protocol. TCP is fast becoming the communications
+        standard within corporate networks. Having MacTCP built-in
+        is a smart move on Apple's part. It also will be PowerPC
+        native.</p>
+
+        <p><b>PC Exchange 2.0</b></p>
+
+        <p>This control panel allows the Mac to mount DOS disks on
+        the desktop, bypassing the cumbersome Apple File Exchange.
+        Combined with Macintosh Easy Open, it opens DOS files by
+        double-clicking on the file itself. No need to remember
+        extensions or associate filenames as you would do on a
+        PC.</p>
+
+        <p><b>Drag Manager</b></p>
+
+        <p>The new Drag Manager simplifies the way users transfer
+        data between applications. Instead of cutting, switching to
+        another application or document, and then pasting, users
+        drag their selections from one window to another, even if
+        it's in different applications. Selections can also be
+        dragged to the Finder, where it will be stored as a
+        'clipping', ready to be dragged into any other window. The
+        Notepad and Scrapbook that come with 7.5 shows how useful
+        this feature can be.</p>
+
+        <p><b>QuickTime 2.0</b></p>
+
+        <p>Version 2.0 of QuickTime features faster frame rates (a
+        Quadra 605 can now play VGA movies at 30 frames per
+        second), support for MIDI and other notational formats, and
+        support for high-end features used in video - MPEG and
+        SMPTE.</p>
+
+        <p><b>Apple Guide</b></p>
+
+        <p>Balloon Help hasn't been successful among Mac
+        developers. Apple hopes that Apple Guide will be better.
+        Developers can write online documentation which lets help
+        be given when appropriate. For example, if a user
+        constantly chooses Copy from the Edit menu, Apple Guide
+        will come up and suggest that cmd-C be used to save time. A
+        more complicated task might be accompanied by cues and
+        redlines (on the screen) to guide the user through the
+        steps needed to accomplish his task. Audio help will be
+        available on high-end Macs.</p>
+
+        <p><b>Mac Easy Open</b></p>
+
+        <p>Easy open uses XTND to translate files from one format
+        to another. This lets users open another persons' file
+        without having to have that person's application. For
+        example, if a Photoshop user receives a PICT file created
+        by Canvas, Easy Open will allow that file to be opened by
+        Photoshop.</p>
+
+        <p><b>Scriptable Finder</b></p>
+
+        <p>The scriptable Finder is a long-delayed product which
+        was supposed to have been shipped with AppleScript in 1993.
+        This allows the Finder to be controlled by scripts to
+        automate file management tasks like backup and
+        organization.</p>
+
+        <p><b>QuickDraw GX</b></p>
+
+        <p>This is Apple's new way of handling graphics, both
+        on-screen and off-screen. It brings capabilities previously
+        found only in high-end graphics products to the operating
+        system level. It supports gradients, enhanced masking,
+        advanced transformation, and other improvements a graphics
+        professional would love. The new printing architecture
+        allows users to select printers and other output devices
+        without the Chooser. Files are printed by dragging them to
+        a printer icon on the desktop. Other features include
+        moving print jobs from one printer to another by dragging
+        icons, allocating large print jobs between different
+        printers, restarting an interrupted job without going back
+        to page 1, and many other features to simplify printing on
+        the Mac. In addition, it is PowerPC native. For those who
+        do not need GX, regular QuickDraw will still be supported
+        and improved.</p>
+
+        <p><b>PowerTalk</b></p>
+
+        <p>PowerTalk is a communications extension that gives Macs
+        built-in email and scheduling. Documents (or parts of
+        documents) can be sent to other people or groups. A
+        separate mail program or mail files are not necessary;
+        everything can be done from a Mail command under the File
+        menu. With Microsoft no longer developing Microsoft Mail,
+        PowerTalk has been endorsed by both Apple and Microsoft as
+        the next upgrade for Mail users.</p>
+
+        <p>The following shareware and freeware utilities have
+        become standard features of System 7.5. Apple either bought
+        out the utility or wrote their own enhancements.</p>
+
+        <table width="100%"
+               border="1"
+               cellspacing="2"
+               cellpadding="0">
+          <tr>
+            <td width="50%"
+                align="center">&nbsp;<b>Utility</b></td>
+
+            <td width="50%"
+                align="center">&nbsp;<b>Purpose</b></td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>Apple Menu Options</b></td>
+
+            <td width="50%">&nbsp;Hierarchical Apple menu</td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>WindowShade</b></td>
+
+            <td width="50%">&nbsp;Roll up/down windows</td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>FindPro</b></td>
+
+            <td width="50%">&nbsp;Enhanced Find command</td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>Sticky</b> <b>Memos</b></td>
+
+            <td width="50%">&nbsp;Post-It notes on the
+            desktop.</td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>SuperClock</b></td>
+
+            <td width="50%">&nbsp;Clock on the menu bar</td>
+          </tr>
+
+          <tr>
+            <td width="50%">&nbsp;<b>Launcher</b></td>
+
+            <td width="50%">&nbsp;Access frequently used programs
+            and files</td>
+          </tr>
+        </table>
+
+        <p>When I first installed 7.5, I noticed that my Mac had
+        slowed down noticeably. After a couple of hours of trial
+        and error, I found out that the following features were
+        hogging my memory and CPU power - <b>Apple Menu Options</b>
+        and <b>Launcher</b>. Turning off these two made 7.5 as fast
+        as my prevous system (7.0.1). I also found additional speed
+        improvements when Apple Guide is turned off, since it has
+        not been optimized for the Power Macintosh.</p>
+
+        <p>[If you miss the features of <b>Apple Menu Options</b>,
+        third-party utilities such as PopupFolder and Now Utilities
+        5.0 can do the same thing with little or no slowdown.]</p>
+
+        <p>Unless you need the advanced graphics capability of
+        QuickDraw GX or the communications features of PowerTalk,
+        installing these features is not recommended. However,
+        graphics and art departments will probably want to install
+        QDGX while business users may want to use PowerTalk, if the
+        network is compatible.</p>
+
+        <p>All in all, System 7.5 makes working with the Mac easier
+        and to offer features to differentiate itself from PC
+        compatibles. It is not a major step in terms of the
+        internal workings of the Mac operating system. That
+        supposedly will come with the release of System 8.0
+        sometime in 1995.</p>
+        <hr />
+
+        <p align="center"><a name="anchor791440"
+           id="anchor791440"></a><b><font size="+2">Macintosh News
+        <br /></font></b> <font size="+1">[Press releases on the
+        world of Macintosh]</font></p>
+
+        <p><b>Apple Computer's <a href=
+        "http://www.thesandbox.net/~arm/eworld/">eWorld</a> Goes
+        Online</b></p>
+
+        <p align="center">&nbsp;<img src="1994Q4_assets/image7.gif"
+             width="122"
+             height="122"
+             align="bottom"
+             naturalsizeflag="3" /></p>
+
+        <p align="center"><b>Newsflash!</b></p>
+
+        <p>CUPERTINO, CALIFORNIA, U.S.A., 1994 JUN 20 (NB) -- Apple
+        Computer Macintosh users in the United States are being
+        invited by Apple Computer to join its new online service,
+        <b>eWorld</b>, which begins service today with close to
+        12,000 members already online.</p>
+
+        <p>According to Apple, eWorld will be a fully global online
+        service offering local access numbers and local content for
+        specific international areas within six months. As part of
+        its continuing cross-platform commitment, Apple will
+        welcome DOS/Windows users to eWorld sometime in 1995. Apple
+        claims that the eWorld sftware is already included in most
+        Apple computers being shipped this summer.</p>
+
+        <p>Officially billed as "eWorld for Macintosh and
+        NewtonMail, an eWorld messaging center for Newtons,"
+        Apple's eWorld opens to a village of buildings, each
+        labeled with a name to identify its content and a mail
+        delivery truck to indicate the presence of e-mail.</p>
+
+        <p align="center"><img src="1994Q4_assets/image8.gif"
+             width="323"
+             height="306"
+             align="bottom"
+             naturalsizeflag="3" /></p>
+
+        <p>The village consists of a computer center, learning
+        center, arts and leisure center, a marketplace, community
+        center, newsstand, business &amp; finance plaza, e-mail
+        center and info booth. Primarily, created as a business to
+        business service, eWorld also offers online instant
+        communication and entertainment features. Point-and-click
+        commands eliminate any need for the slash (/) commands used
+        in earlier online services.</p>
+
+        <p>More than one hundred partners have joined Apple's
+        eWorld to provide a host of news, information, service and
+        communication. The Computer Center offers news, editorials,
+        reviews and features from award-winning news wire services
+        such as Newsbytes, as well as from MacWeek, MacUser,
+        Ziff/Net Mac, Macworld and others. A 24-hour Apple Customer
+        Center support area offers guidance, problem-solving,
+        information and the latest resources to assist
+        customers.</p>
+
+        <p>US Mac users may obtain the software directly through
+        Apple at (800) 775-4556. The monthly fee is $8.95 per month
+        and includes two free hours of evening or weekend usage.
+        Each additional hour is billed at $4.95 with an hourly
+        surcharge of $2.95 during the business hours of 6:00 a.m.
+        to 6:00 p.m. local time. There are no additional charges
+        for Internet mail or 9600 baud access.</p>
+
+        <p align="center"></p>
+        <hr width="56%" />
+
+        <p><b>APPLE PREPARES 486DX COPROCESSOR CARD FOR POWER MAC
+        6100 ONLY</b></p>
+
+        <p>(November 4th 1994) Details are still sketchy, but as we
+        went to press Apple was preparing to announce that another
+        of its technology demonstrations - the 486 board for the
+        Power Macintosh - has turned into a real product.</p>
+
+        <p>We first reported on the board back in July (PowerPC
+        News issue 9, story 1111) when Apple demonstrated a 50MHz
+        486DX2 co-processor which let the Macintosh run Intel-based
+        programs more efficiently than Insignia's Softwindows. The
+        demonstration was an evolution of the 'Houdini' card which
+        had previously been produced as a limited-run product for
+        the Quadra 610. It featured improved networking support and
+        SoundBlaster-compatible sound output.</p>
+
+        <p>We understand that the finished product uses a 66MHz
+        486DX-2 but that it will be limited to the Power Macintosh
+        6100 only. From a marketing standpoint the decision looks
+        curious, but an Apple source says that the limitation was
+        forced on the company by the form-factor of the card and
+        the fact that it needs to use the 6100's '040 slot . It
+        still looks curious and means that the Power Mac 6100 will
+        become the Macintosh of choice for those users who need to
+        run Windows software fast and in protected mode. The upside
+        is the price. Our guess is that it should appear in the US
+        for something like $600 or $700. [Which makes a great
+        upgrade option for Power Mac users who have to run DOS
+        applications!]</p>
+
+        <p>[Subsequent information indicates that the card will
+        also work on the 7100 and 8100 Power Macintosh models, but
+        Apple will not provide it as a bundled option. You have to
+        buy the card separately and install it yourself by removing
+        the HPV video card already present in the 7100/8100.]</p>
+
+        <p>(C) PowerPC News - Free by mailing:
+        add@power.globalnews.com</p>
+
+        <p align="center"></p>
+        <hr />
+
+        <p><a name="anchor797272"
+           id="anchor797272"></a><b>November User Group Connection
+           Specials</b></p>
+
+        <p>(November 1st 1994) Every month, the User Group
+        Connection (UGC) announces specials available to all user
+        group members. It allows members to purchase new and
+        reconditioned equipment at reduced prices, often below
+        cost. To participate, contact your local user group for
+        purchase program details and requirements. Orders filled on
+        a first-come, first-serve basis. Prices include ground
+        shipping; next-day FedEx available for an additional fee.
+        CA residents add 8.25% sales tax. Refurbished items have
+        90-day warranty. New items have manufacturer's
+        warranty.</p>
+
+        <p>User Group Purchase Program - November 1994</p>
+
+        <table width="100%"
+               border="1"
+               cellspacing="2"
+               cellpadding="0">
+          <tr>
+            <th width="23%">&nbsp;Product</th>
+
+            <th width="42%">Description</th>
+
+            <th width="23%">Refurbished / New</th>
+
+            <th width="12%">Price</th>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>Performa 575</b></td>
+
+            <td>&nbsp;33 MHz 68LC040, 14" color display, 5 Meg RAM
+            / 250 Meg HD, expansion slots</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$1399</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>Performa 476</b></td>
+
+            <td>&nbsp;25 MHz 68LC040, 14" color display, 4 Meg RAM
+            / 230 Meg HD</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$ 989</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>Macintosh LC 520</b></td>
+
+            <td>&nbsp;25 MHz 68030, 14" color display, 4 Meg RAM /
+            80 Meg HD, 16-bit color</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$ 799</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;</td>
+
+            <td>&nbsp;25 MHz 68030, 14" color display, 5 Meg RAM /
+            80 Meg HD, 16-bit color, CD-ROM</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$ 999</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>StyleWriter II</b></td>
+
+            <td>300 dpi inkjet</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$ 189</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>Personal LaserWriter 300</b></td>
+
+            <td>&nbsp;300 dpi laser printer, QuickDraw, 100 sheet
+            paper tray, EnergyStar compliant</td>
+
+            <td align="center">&nbsp;<b>refurbished</b></td>
+
+            <td align="center">&nbsp;$ 379</td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;<b>JAG II</b></td>
+
+            <td>&nbsp;Graphics software for anti-aliasing and
+            resolution enhancement.</td>
+
+            <td align="center">&nbsp;<b>new</b></td>
+
+            <td align="center">&nbsp;$ 39.95</td>
+          </tr>
+        </table>
+        <hr />
+
+        <p align="center"><img src="newsletter_assets/contact.gif"
+             width="327"
+             height="275"
+             align="bottom"
+             naturalsizeflag="3" /></p>
+
+        <p align="center">Click above to exit the newsletter</p>
+
+        <p><font size="-2">The ASACMUG newsletter is an independent
+        publication not affiliated or otherwise associated with or
+        sponsored or sanctioned by Apple Computer Inc or
+        AlliedSignal, Inc. The opinions, statements, positions and
+        views stated herein are those of the authors or publisher
+        and are not intended to be the opinions, positions or views
+        of Apple Computer Inc. or AlliedSignal, Inc.</font></p>
+
+        <p><font size="-2">© 1994 ASACMUG Apple®, Macintosh®,
+        FDHD®, and Mac® are registered trademarks of Apple
+        Computer.</font></p>
+
+        <p><font size="-2">Portions © MUG News Service.</font></p>
+
+        <p>&nbsp;</p>
+
+        <p><br /></p>
+
+        <p>&nbsp;</p>
+
+        <p><br /></p>
+
+        <p><br /></p>
+
+        <p>&nbsp;</p>
+
+        <p><br /></p>
+
+        <p>&nbsp;</p>
+
+        <p><br />
+        <br /></p>
+      </div><!-- End content -->
+    </div><!-- End main content wrapper -->
+  </div><!-- End container -->
+</body>
+</html>
