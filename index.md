@@ -8,7 +8,7 @@ In 1999, Honeywell was acquired by Allied-Signal, which then took on the more re
 
 ASACMUG membership declined after Macs were phased out of the company after 1995. Attrition and retirements effectively ended the group by 2008. This web page serves as a memorial of its existence.
 
-![ASACMUG Logo](asacmug_logo) - ASACMUG 1988-2008
+![ASACMUG Logo](asacmug_logo.gif) - ASACMUG 1988-2008
 
 ## ASACMUG Archives
 
